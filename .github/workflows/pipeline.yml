@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: pip install datasets huggingface_hub
+        run: pip install -r requirements.txt
       - name: Upload Dataset to Hugging Face Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: pip install pandas scikit-learn huggingface_hub
+        run: pip install -r requirements.txt
       - name: Run Data Preparation
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -36,7 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: pip install scikit-learn xgboost mlflow joblib huggingface_hub
+        run: pip install -r requirements.txt
       - name: Start MLflow Tracking
         run: |
           nohup mlflow ui --host 0.0.0.0 --port 5000 &
@@ -52,7 +52,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: pip install huggingface_hub
+        run: pip install -r requirements.txt
       - name: Deploy to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
