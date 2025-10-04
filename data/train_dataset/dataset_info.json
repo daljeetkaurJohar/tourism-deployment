@@ -1,0 +1,114 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "tourism-customer-purchase-prediction",
+  "dataset_size": 805453,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/Daljeetk/tourism-customer-purchase-prediction@c0c89cad4d3b4952433ba6027c33b2db2e5c4386/tourism.csv": {
+      "num_bytes": 477468,
+      "checksum": null
+    }
+  },
+  "download_size": 477468,
+  "features": {
+    "CustomerID": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "ProdTaken": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "Age": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "TypeofContact": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "CityTier": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "DurationOfPitch": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Occupation": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Gender": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "NumberOfPersonVisiting": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "NumberOfFollowups": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "ProductPitched": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "PreferredPropertyStar": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "MaritalStatus": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "NumberOfTrips": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Passport": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "PitchSatisfactionScore": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "OwnCar": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "NumberOfChildrenVisiting": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "Designation": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "MonthlyIncome": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1282921,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 805453,
+      "num_examples": 4128,
+      "dataset_name": "tourism-customer-purchase-prediction"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
