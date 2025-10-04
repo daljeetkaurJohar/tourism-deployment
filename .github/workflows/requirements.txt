@@ -1,0 +1,23 @@
+# ================================
+# Requirements for Tourism Project
+# GitHub Actions Workflow
+# ================================
+
+# Data processing
+pandas
+numpy
+
+# Machine Learning
+scikit-learn
+xgboost
+joblib
+
+# Hugging Face Hub + Datasets
+datasets
+huggingface_hub
+
+# Experiment Tracking
+mlflow
+
+# Deployment (Streamlit for Space hosting)
+streamlit
