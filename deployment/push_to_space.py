@@ -4,7 +4,7 @@ import os
 
 HF_TOKEN = os.getenv("HF_TOKEN")
 HF_USERNAME = "daljeetkaurJohar"
-SPACE_NAME = "tourism-deployment"
+SPACE_NAME = "Tourism-Package-Prediction"
 DEPLOY_DIR = "deployment"
 
 if not os.path.isdir(DEPLOY_DIR):
