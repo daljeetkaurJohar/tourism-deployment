@@ -9,7 +9,7 @@ SPACE_NAME = "tourism-deployment"
 DEPLOY_DIR = "tourism_project/deployment"
 
 api = HfApi(token=HF_TOKEN)
-api.create_repo(repo_id=f"{HF_USERNAME}/{SPACE_NAME}", repo_type="space", exist_ok=True)
+api.create_repo(repo_id=f"{HF_USERNAME}/{SPACE_NAME}", repo_type="space", space_sdk="streamlit",exist_ok=True)
 
 upload_folder(
     repo_id=f"{HF_USERNAME}/{SPACE_NAME}",
