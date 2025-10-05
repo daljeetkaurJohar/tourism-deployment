@@ -1,10 +1,10 @@
 
-pandas
-numpy
-scikit-learn
-xgboost
-joblib
-datasets
-huggingface_hub
-mlflow
-streamlit
+pandas          # For data manipulation and analysis.
+numpy           # For numerical operations, often used in conjunction with pandas and scikit-learn.
+scikit-learn    # A widely used library for various machine learning algorithms.
+xgboost         # Optimized gradient boosting library for improved model performance.
+joblib          # For efficient saving and loading of Python objects, especially large models.
+datasets        # Hugging Face library for easily loading and managing datasets.
+huggingface_hub # Hugging Face library for interacting with the Hugging Face Hub (models, datasets, spaces).
+mlflow          # For managing the machine learning lifecycle, including tracking experiments.
+streamlit       # For building interactive web applications (e.g., the front-end for the ML model).
