@@ -2,7 +2,7 @@ from huggingface_hub import HfApi, upload_folder
 import os
 
 HF_TOKEN = os.getenv("HF_TOKEN")
-HF_USERNAME = "daljeetkaurjohar"   # make sure this matches EXACT username
+HF_USERNAME = "Daljeetk"  # make sure this matches EXACT username
 SPACE_NAME = "Tourism-Package-Prediction"
 DEPLOY_DIR = "deployment"
 
