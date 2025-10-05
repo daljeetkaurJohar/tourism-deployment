@@ -1,10 +1,10 @@
-name: Tourism Project Pipeline  # Tourism Project Pipeline workflow
+name: Tourism Project Pipeline
 
 on:
   push:
     branches:
-      - main   # Run pipeline on push to main branch
-  workflow_dispatch:  # Allow manual triggering from GitHub UI
+      - main
+  workflow_dispatch:
 
 jobs:
 
@@ -19,7 +19,7 @@ jobs:
           python-version: 3.11
 
       - name: Install Dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: pip install --upgrade pip && pip install -r .github/workflows/requirements.txt
 
       - name: Upload Dataset to Hugging Face Hub
         env:
@@ -38,7 +38,7 @@ jobs:
           python-version: 3.11
 
       - name: Install Dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: pip install --upgrade pip && pip install -r .github/workflows/requirements.txt
 
       - name: Run Data Preparation
         env:
@@ -57,7 +57,7 @@ jobs:
           python-version: 3.11
 
       - name: Install Dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: pip install --upgrade pip && pip install -r .github/workflows/requirements.txt
 
       - name: Start MLflow Tracking
         run: |
@@ -81,7 +81,7 @@ jobs:
           python-version: 3.11
 
       - name: Install Dependencies
-        run: pip install --upgrade pip && pip install -r requirements.txt
+        run: pip install --upgrade pip && pip install -r .github/workflows/requirements.txt
 
       - name: Deploy to Hugging Face Space
         env:
