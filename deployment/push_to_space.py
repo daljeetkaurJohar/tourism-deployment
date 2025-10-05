@@ -7,9 +7,20 @@ HF_USERNAME = "daljeetkaurJohar"
 SPACE_NAME = "tourism-deployment"
 DEPLOY_DIR = "/content/tourism_project/deployment"
 
-api = HfApi(token=HF_TOKEN)
-api.create_repo(repo_id=f"{HF_USERNAME}/{SPACE_NAME}", repo_type="space", exist_ok=True)
+if not os.path.isdir(DEPLOY_DIR):
+    raise ValueError(f"Deployment folder does not exist: {DEPLOY_DIR}")
 
+api = HfApi(token=HF_TOKEN)
+
+# Create the space with the required space_sdk argument
+api.create_repo(
+    repo_id=f"{HF_USERNAME}/{SPACE_NAME}",
+    repo_type="space",
+    space_sdk="streamlit",  # required for Streamlit apps
+    exist_ok=True
+)
+
+# Upload the folder contents
 upload_folder(
     repo_id=f"{HF_USERNAME}/{SPACE_NAME}",
     repo_type="space",
@@ -19,3 +30,4 @@ upload_folder(
 )
 
 print(f"✅ Deployment pushed to Hugging Face Space: https://huggingface.co/spaces/{HF_USERNAME}/{SPACE_NAME}")
+
