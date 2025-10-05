@@ -1,3 +1,4 @@
+yaml_content = """
 name: Tourism Project Pipeline
 
 on:
@@ -12,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
+        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Upload Dataset to Hugging Face Hub
         env:
@@ -24,6 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
+        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Run Data Preparation
         env:
@@ -36,6 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
+        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Start MLflow Tracking
         run: |
@@ -52,8 +56,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
+        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Deploy to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python tourism_project/push_to_space.py
+
+"""
