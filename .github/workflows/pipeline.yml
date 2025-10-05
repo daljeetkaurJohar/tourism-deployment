@@ -1,5 +1,4 @@
-yaml_content = """
-name: Tourism Project Pipeline
+name: Tourism Project Pipeline  # Tourism Project Pipeline workflow
 
 on:
   push:
@@ -88,5 +87,3 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python tourism_project/push_to_space.py
-
-"""
