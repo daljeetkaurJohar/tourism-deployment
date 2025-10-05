@@ -22,12 +22,12 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install -r tourism_project/deployment/requirements.txt
+          pip install -r deployment/requirements.txt
 
       - name: Upload Dataset to Hugging Face Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python tourism_project/deployment/push_to_hf.py
+        run: python deployment/push_to_hf.py
 
   data-prep:
     needs: register-dataset
@@ -44,12 +44,12 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install -r tourism_project/deployment/requirements.txt
+          pip install -r deployment/requirements.txt
 
       - name: Run Data Preparation
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python tourism_project/model_building/data_preprocessing.py
+        run: python model_building/data_preprocessing.py
 
   model-training:
     needs: data-prep
@@ -66,12 +66,12 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install -r tourism_project/deployment/requirements.txt
+          pip install -r deployment/requirements.txt
 
       - name: Train and Register Model
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python tourism_project/model_building/train_and_register_model.py
+        run: python model_building/train_and_register_model.py
 
   deploy-hosting:
     needs: [model-training, data-prep, register-dataset]
@@ -88,9 +88,9 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install -r tourism_project/deployment/requirements.txt
+          pip install -r deployment/requirements.txt
 
       - name: Deploy App to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python tourism_project/deployment/push_to_space.py
+        run: python deployment/push_to_space.py
