@@ -68,7 +68,7 @@ inputs["CityTier"] = city_tier_mapping[selected_city_tier_str]
 
 inputs["Occupation"] = st.sidebar.selectbox("Occupation", ["Salaried","Freelancer","Small Business","Large Business"])
 inputs["Gender"] = st.sidebar.selectbox("Gender", ["Male","Female"])
-inputs["NumberOfPersonVisiting"] = i_num("NumberOfPersonVisiting", 1, 2, 3,4,5)
+inputs["NumberOfPersonVisiting"] = i_num("NumberOfPersonVisiting", 1, 2,5)
 inputs["PreferredPropertyStar"] = i_num("PreferredPropertyStar", 3, 1, 5)
 inputs["MaritalStatus"] = st.sidebar.selectbox("MaritalStatus", ["Single","Married","Divorced","Unmarried"])
 inputs["NumberOfTrips"] = i_num("NumberOfTrips", 1, 2,5)
