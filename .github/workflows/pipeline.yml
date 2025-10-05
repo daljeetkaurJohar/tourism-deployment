@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Upload Dataset to Hugging Face Hub
         env:
@@ -26,7 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Run Data Preparation
         env:
@@ -39,7 +37,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Start MLflow Tracking
         run: |
@@ -56,7 +53,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        working-directory: ./deployment
         run: pip install -r requirements.txt
       - name: Deploy to Hugging Face Space
         env:
