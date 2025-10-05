@@ -1,10 +1,9 @@
-
 from huggingface_hub import HfApi, upload_folder
 import os
 
 HF_TOKEN = os.getenv("HF_TOKEN")
-HF_USERNAME = "daljeetkaurJohar"
-SPACE_NAME = "Tourism-Package-Prediction"
+HF_USERNAME = "daljeetkaurJohar"   # <-- must match your HF username exactly
+SPACE_NAME = "Tourism-Package-Prediction"  # <-- use the actual Space name
 DEPLOY_DIR = "deployment"
 
 if not os.path.isdir(DEPLOY_DIR):
@@ -12,15 +11,15 @@ if not os.path.isdir(DEPLOY_DIR):
 
 api = HfApi(token=HF_TOKEN)
 
-# Create the space with the required space_sdk argument
+# ✅ Create space with SDK
 api.create_repo(
     repo_id=f"{HF_USERNAME}/{SPACE_NAME}",
     repo_type="space",
-    space_sdk="streamlit",  # required for Streamlit apps
+    space_sdk="streamlit",   # REQUIRED!
     exist_ok=True
 )
 
-# Upload the folder contents
+# Upload code
 upload_folder(
     repo_id=f"{HF_USERNAME}/{SPACE_NAME}",
     repo_type="space",
@@ -30,4 +29,5 @@ upload_folder(
 )
 
 print(f"✅ Deployment pushed to Hugging Face Space: https://huggingface.co/spaces/{HF_USERNAME}/{SPACE_NAME}")
+
 
