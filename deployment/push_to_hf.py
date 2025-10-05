@@ -7,7 +7,7 @@ HF_USERNAME = "Daljeetk"
 SPACE_NAME = "Tourism-Package-Prediction"
 
 # Deployment folder on Colab
-DEPLOY_DIR = "/content/tourism_project/deployment"
+DEPLOY_DIR = "deployment"
 
 # Make sure folder exists
 if not os.path.isdir(DEPLOY_DIR):
