@@ -5,7 +5,7 @@ import os
 HF_TOKEN = os.getenv("HF_TOKEN")
 HF_USERNAME = "daljeetkaurJohar"
 SPACE_NAME = "tourism-deployment"
-DEPLOY_DIR = "/content/tourism_project/deployment"
+DEPLOY_DIR = "deployment"
 
 if not os.path.isdir(DEPLOY_DIR):
     raise ValueError(f"Deployment folder does not exist: {DEPLOY_DIR}")
