@@ -18,6 +18,7 @@ TEST_CSV_PATH = os.path.join(DATA_FOLDER, "test_dataset.csv")
 
 # Load raw dataset
 dataset = load_dataset(HF_RAW_REPO, token=HF_TOKEN)
+
 # Remove Unnamed columns
 columns_to_remove = [c for c in dataset['train'].column_names if c.lower().startswith("unnamed")]
 if columns_to_remove:
@@ -43,7 +44,21 @@ api = HfApi(token=HF_TOKEN)
 api.create_repo(repo_id=HF_TRAIN_REPO, repo_type="dataset", private=True, exist_ok=True)
 api.create_repo(repo_id=HF_TEST_REPO, repo_type="dataset", private=True, exist_ok=True)
 
-api.upload_file(TRAIN_CSV_PATH, "train_dataset.csv", repo_id=HF_TRAIN_REPO, repo_type="dataset", commit_message="Upload train dataset")
-api.upload_file(TEST_CSV_PATH, "test_dataset.csv", repo_id=HF_TEST_REPO, repo_type="dataset", commit_message="Upload test dataset")
+api.upload_file(
+    path_or_fileobj=TRAIN_CSV_PATH,
+    path_in_repo="train_dataset.csv",
+    repo_id=HF_TRAIN_REPO,
+    repo_type="dataset",
+    commit_message="Upload train dataset"
+)
+
+api.upload_file(
+    path_or_fileobj=TEST_CSV_PATH,
+    path_in_repo="test_dataset.csv",
+    repo_id=HF_TEST_REPO,
+    repo_type="dataset",
+    commit_message="Upload test dataset"
+)
 
 print("✅ Train and test datasets uploaded successfully")
+
