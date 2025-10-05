@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import joblib
@@ -46,3 +47,4 @@ if st.button("Predict Purchase"):
     df_input = preprocess_input(user_input)
     prediction = model.predict(df_input)
     st.success(f"Predicted Purchase: {int(prediction[0])}")
+
